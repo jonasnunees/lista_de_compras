@@ -17,10 +17,21 @@
     
     <!-- Link para o arquivo de estilos CSS externo -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Importa a biblioteca Supabase direto do CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
     <!-- Corpo da página - todo conteúdo visível fica aqui -->
+
+    <!-- Cabeçalho com informações do usuário -->
+    <div class="user-header">
+        <div class="user-info">
+            <span id="user-name">👤 Carregando...</span>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()">Sair</button>
+    </div>
 
     <!-- Container principal da compra atual -->
     <div class="container">
