@@ -71,11 +71,20 @@ async function handleSignup() {
     const password = document.getElementById('signup-password').value;
     const confirm = document.getElementById('signup-confirm').value;
     
+    // 1. Verificação de campos vazios
     if (!name || !email || !password || !confirm) {
         showNotification('Preencha tudo!', '#ef4444');
         return;
     }
+
+    // 2. NOVA VALIDAÇÃO: Expressão Regular para Senha Forte
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+        showNotification('Senha fraca! Use 8+ caracteres, maiúscula, número e símbolo.', '#ef4444');
+        return;
+    }
     
+    // 3. Verificação de confirmação
     if (password !== confirm) {
         showNotification('Senhas diferentes!', '#ef4444');
         return;
@@ -83,7 +92,6 @@ async function handleSignup() {
     
     showLoading(true);
     try {
-        // CORRIGIDO: Agora usando .signUp em vez de .signInWithPassword
         const { data, error } = await supabaseClient.auth.signUp({
             email: email,
             password: password,

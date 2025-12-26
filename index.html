@@ -82,11 +82,16 @@
                 <input type="email" id="signup-email" placeholder="seu@email.com" required>
             </div>
             
-            <!-- Campo de senha -->
             <div class="input-group">
                 <label for="signup-password">Senha:</label>
-                <input type="password" id="signup-password" placeholder="Mínimo 6 caracteres" required>
-            </div>
+                <input 
+                    type="password" 
+                    id="signup-password" 
+                    placeholder="8+ chars, A-Z, 0-9 e símbolo" 
+                    required
+                    pattern="(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+                    title="A senha deve conter pelo menos 8 caracteres, incluindo uma letra maiúscula, um número e um caractere especial (@$!%*?&).">
+	        </div>
             
             <!-- Campo de confirmação de senha -->
             <div class="input-group">
