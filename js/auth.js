@@ -66,10 +66,16 @@ async function handleLogin() {
 }
 
 async function handleSignup() {
-    const name = document.getElementById('signup-name').value.trim();
-    const email = document.getElementById('signup-email').value.trim();
-    const password = document.getElementById('signup-password').value;
-    const confirm = document.getElementById('signup-confirm').value;
+    // Captura dos elementos para facilitar a limpeza depois
+    const nameInput = document.getElementById('signup-name');
+    const emailInput = document.getElementById('signup-email');
+    const passwordInput = document.getElementById('signup-password');
+    const confirmInput = document.getElementById('signup-confirm');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirm = confirmInput.value;
     
     // 1. Verificação de campos vazios
     if (!name || !email || !password || !confirm) {
@@ -77,7 +83,7 @@ async function handleSignup() {
         return;
     }
 
-    // 2. NOVA VALIDAÇÃO: Expressão Regular para Senha Forte
+    // 2. Validação: Expressão Regular para Senha Forte
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(password)) {
         showNotification('Senha fraca! Use 8+ caracteres, maiúscula, número e símbolo.', '#ef4444');
@@ -99,8 +105,26 @@ async function handleSignup() {
         });
         
         if (error) throw error;
-        showNotification('Conta criada! Confirme seu e-mail.', '#16a34a');
-        setTimeout(() => { showLoading(false); toggleForms(); }, 2000);
+
+        // SUCESSO:
+showNotification('Conta criada com sucesso!', '#16a34a');
+
+        setTimeout(() => {
+            // Limpeza dos campos
+            nameInput.value = '';
+            emailInput.value = '';
+            passwordInput.value = '';
+            confirmInput.value = '';
+
+            // GARANTIA DE TROCA DE TELA:
+            // Esconde o formulário de cadastro
+            document.getElementById('signup-form').style.display = 'none';
+            // Mostra o formulário de login (certifique-se que o ID está correto)
+            document.getElementById('login-form').style.display = 'block';
+
+            showLoading(false);
+        }, 2000);
+
     } catch (error) {
         showNotification(error.message, '#ef4444');
         showLoading(false);
