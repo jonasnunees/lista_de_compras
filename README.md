@@ -1,4 +1,4 @@
-# 🛒 Supermercado Pro - Controle Total
+i# 🛒 Supermercado Pro - Controle Total
 
 Um sistema completo e intuitivo para gerenciar suas compras de supermercado, controlar orçamento e acompanhar seus gastos ao longo do tempo.
 
@@ -117,18 +117,6 @@ O projeto funciona em todos os navegadores modernos:
 - Manipulação eficiente do DOM
 - Validação de dados do usuário
 - Sistema de notificações (toasts)
-
-## 📚 Para Iniciantes
-
-Este projeto foi desenvolvido pensando em programadores iniciantes! Todo o código está **comentado linha por linha** em português, explicando:
-
-- O que cada função faz
-- Como funciona o localStorage
-- Como manipular o DOM
-- Como trabalhar com arrays e objetos
-- Como criar interfaces responsivas
-
-Perfeito para estudar e aprender! 🎓
 
 ## 🤝 Contribuindo
 
