@@ -7,7 +7,7 @@
 const SUPABASE_URL = 'https://vkgqxwcxnzuqjsgfzuau.supabase.co'; // Ex: https://xxxx.supabase.co
 
 // Chave pública (anon key) do Supabase
-const SUPABASE_KEY = 'sb_publishable_Ut2QQn4tPMYuAF-E3GNLMw_wOIoJKBE';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZrZ3F4d2N4bnp1cWpzZ2Z6dWF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3MDg3MDAsImV4cCI6MjA4MjI4NDcwMH0.vJnHuo9ORGBSgDPh6TlV8gBR6XjCzY6RYIe_zNjZ5I8';
 
 // Cria a instância do cliente Supabase
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
