@@ -198,8 +198,6 @@ Futuras melhorias planejadas:
 - [ ] Comparação de preços entre compras
 - [ ] PWA (funcionar offline como app)
 - [ ] Notificações push
-- [ ] Compartilhar lista com família
-- [ ] Importar lista de texto/foto
 - [ ] Integração com APIs de supermercados
 
 ## 📄 Licença
